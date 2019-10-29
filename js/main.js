@@ -3,6 +3,7 @@ let snowflakeSpeed = 4;
 let obstacleSpeed = 1;
 
 
+
 const width = 1200;
 const height = 700;
 

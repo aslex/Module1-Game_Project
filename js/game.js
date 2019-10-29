@@ -3,6 +3,7 @@ class Game {
         this.background = new Background();
         this.player = new Player();
         this.obstacleArr = [];
+        //this.randomInterval = Math.random()*150 + 120;
     }
 
     preload() {
@@ -13,29 +14,60 @@ class Game {
 
     setup() {
         this.background.setup();
+
     }
 
     draw() {
         this.background.draw();
         this.player.draw();
 
-        if (frameCount > 300 && frameCount % 200 === 0) {
+
+        // random interval function
+        let randomInterval = setInterval(function () {
+            return Math.random() * 170 + 130;
+        }, 3000);
+
+        if (frameCount > 200 && frameCount % 200 === 0) {
             this.obstacleArr.push(new Obstacle());
         }
 
         this.obstacleArr.forEach((obs, index, arr) => {
             obs.draw();
+
             if (obs.x < -obs.width) {
                 arr.splice(index, 1);
             }
+            if (this.collide(obs, this.player)) {
+                console.log('game over');
+                noLoop();
+            }
         });
-
-        // console.log(frameCount);
-
-
     }
 
-    collide(obstacle, player) {
+    // player = {
+    //     this.playerx = player.x;
+    //     this.playery = player.y;
+    // }
+    // obstacle = {
+    //     this.obstaclex = obstacle.x;
+    //     this.obstacley = obstacle.y;
+    // }
 
+
+
+    collide(obstacle, player) {
+        //    if(player.x +player.width < obstacle.x || player.x >obstacle.x + obstacle.width){
+        //        return false;
+        //    } if (player.y + player.height>obstacle.y || player.y < obstacle.y + obstacle.height){
+        //        return false;
+        //    } return true;
+
+
+        return !(
+            player.x + player.width < obstacle.x ||
+            player.x > obstacle.x + obstacle.width ||
+            player.y + player.height > obstacle.y ||
+            player.y < obstacle.y + obstacle.height
+        )
     }
 }

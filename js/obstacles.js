@@ -3,9 +3,9 @@ class Obstacle {
         this.y = random(height - 140, height + 40);
         this.x = width;
         this.treeObstacle = loadImage('/assets/tree_obstacle.png');
-        // this.width = 100;
-        // this.height = 100;
-       
+        this.width = 80;
+        this.height = 90;
+
     }
 
     preload() {
@@ -15,13 +15,13 @@ class Obstacle {
     draw() {
         //clear();
 
-        image(this.treeObstacle, this.x, this.y, 80, 90);
-        // obstacleSpeed = 1;
+        image(this.treeObstacle, this.x, this.y, this.width, this.height);
+
         // rect(this.x, this.y, this.width, this.height);
         this.x -= 4 * obstacleSpeed;
         this.y -= 1.5 * obstacleSpeed;
         obstacleSpeed = 1;
-    
+
 
     }
     // accelerate(){

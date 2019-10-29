@@ -4,7 +4,8 @@ class Player {
         this.y = 230;
         this.velocity = 0;
         this.gravity = .2;
-
+        this.width = 70;
+        this.height = 60;
 
     }
 
@@ -14,7 +15,8 @@ class Player {
 
     draw() {
 
-        image(this.ski, this.x, this.y, 70, 60);
+        image(this.ski, this.x, this.y, this.width, this.height)
+        // rect(this.x, this.y, this.width, this.height)
         if (frameCount > 200 && frameCount < 340) {
             this.x += 2;
             this.y += .9;
@@ -42,8 +44,8 @@ class Player {
     accelerate() {
         console.log('accelerate');
         snowflakeSpeed = 8;
-        obstacleSpeed = 3;
-        console.log(obstacleSpeed)
+        obstacleSpeed = 4;
+        console.log(obstacleSpeed);
 
     }
 }
