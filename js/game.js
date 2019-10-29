@@ -9,15 +9,17 @@ class Game {
     preload() {
         this.background.preload();
         this.player.preload();
-
+        console.log('game.preload');
     }
 
     setup() {
         this.background.setup();
+        console.log('game.setup');
 
     }
 
     draw() {
+        console.log('game.draw');
         this.background.draw();
         this.player.draw();
 
@@ -27,74 +29,41 @@ class Game {
         //     return Math.random() * 170 + 130;
         // }, 3000);
 
-        if (frameCount > 200 && frameCount % 200 === 0) {
-            this.obstacleArr.push(new Obstacle());
+        if (gameStart === true) {
+            if (frameCount > 200 && frameCount % 200 === 0) {
+                this.obstacleArr.push(new Obstacle());
+            }
+
+            this.obstacleArr.forEach((obs, index, arr) => {
+                obs.draw();
+
+                if (obs.x < -obs.width) {
+                    arr.splice(index, 1);
+                }
+                if (this.isCollision(obs, this.player)) {
+                    console.log('game over');
+                    noLoop();
+                }
+            });
         }
-
-        this.obstacleArr.forEach((obs, index, arr) => {
-            obs.draw();
-
-            if (obs.x < -obs.width) {
-                arr.splice(index, 1);
-            }
-            if (this.isCollision(obs, this.player)) {
-                console.log('game over');
-                noLoop();
-            }
-            console.log(this.isCollision(obs, this.player))
-        });
-
     }
-
-    // player = {
-    //     this.playerx = player.x;
-    //     this.playery = player.y;
-    // }
-    // obstacle = {
-    //     this.obstaclex = obstacle.x;
-    //     this.obstacley = obstacle.y;
-    // }
-
-
-
-    // collide(obstacle, player) {
-
-    //     if ((player.x + player.width) < obstacle.x || player.x > (obstacle.x + obstacle.width)) {
-    //         console.log('function false')
-
-    //         return false;
-    //     } else if ((player.y + player.height) > obstacle.y || player.y < (obstacle.y + obstacle.height)) {
-
-    //         console.log('function also false')
-    //         return false;
-    //     } else {
-    //         console.log('AT ANYTIME TRUEEEE????');
-    //         return true;
-    //     }
-
-
-    //     // return !(
-    //     //     player.x + player.width < obstacle.x ||
-    //     //     player.x > obstacle.x + obstacle.width ||
-    //     //     player.y + player.height > obstacle.y ||
-    //     //     player.y < obstacle.y + obstacle.height
-    //     // )
-    // }
 
     isCollision(obstacle, player) {
         if (
-            player.x + player.width < obstacle.x ||
-            obstacle.x + obstacle.width < player.x
+            player.x + player.width - 20 < obstacle.x + 10 ||
+            obstacle.x - 10 + obstacle.width < player.x + 20
         ) {
             return false;
         }
         if (
-            player.y > obstacle.y + obstacle.height ||
-            obstacle.y > player.y + player.height
+            player.y + 20 > obstacle.y + obstacle.height ||
+            obstacle.y > player.y + player.height - 20
         ) {
             return false;
         }
         return true;
     }
+
+
 
 }

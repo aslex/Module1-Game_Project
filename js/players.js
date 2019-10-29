@@ -6,6 +6,7 @@ class Player {
         this.gravity = .2;
         this.width = 70;
         this.height = 60;
+        this.jumpCount = 0;
 
     }
 
@@ -16,8 +17,8 @@ class Player {
     draw() {
 
         image(this.ski, this.x, this.y, this.width, this.height)
-        // rect(this.x, this.y, this.width, this.height)
-        if (frameCount > 200 && frameCount < 340) {
+
+        if (frameCount > 250 && frameCount < 390) {
             this.x += 2;
             this.y += .9;
             // console.log(this.x, this.y);
@@ -31,15 +32,19 @@ class Player {
         if (this.y > 355) {
             this.velocity = 0;
             this.y = 355;
+            this.jumpCount = 0;
         }
+   
         snowflakeSpeed = 4;
-        obstacleSpeed = 1;
-
+        obstacleSpeed = 1;  
     }
 
     jump() {
-        console.log('jump!');
-        this.velocity = 8;
+        if (this.jumpCount < 2) {
+            console.log('jump!');
+            this.velocity = 8;
+            this.jumpCount++;
+        }
     }
     accelerate() {
         console.log('accelerate');
