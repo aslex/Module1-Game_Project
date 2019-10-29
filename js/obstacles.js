@@ -18,9 +18,13 @@ class Obstacle {
         image(this.treeObstacle, this.x, this.y, this.width, this.height);
 
         // rect(this.x, this.y, this.width, this.height);
-        this.x -= 4 * obstacleSpeed;
-        this.y -= 1.5 * obstacleSpeed;
-        obstacleSpeed = 1;
+        this.x -= 4;
+        this.y -= 1.5;
+        if (keyIsDown(RIGHT_ARROW)) {
+            this.x -= 6;
+            this.y -= 2.25;
+        }
+
 
 
     }

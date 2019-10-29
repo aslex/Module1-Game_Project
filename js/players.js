@@ -34,9 +34,9 @@ class Player {
             this.y = 355;
             this.jumpCount = 0;
         }
-   
+
         snowflakeSpeed = 4;
-        obstacleSpeed = 1;  
+        obstacleSpeed = 1;
     }
 
     jump() {
@@ -49,8 +49,8 @@ class Player {
     accelerate() {
         console.log('accelerate');
         snowflakeSpeed = 8;
-        obstacleSpeed = 4;
-        console.log(obstacleSpeed);
+        // obstacleSpeed = 4;
+        // console.log(obstacleSpeed);
 
     }
 }

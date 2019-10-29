@@ -55,7 +55,7 @@ class Background {
         image(this.snowflake, this.xsnowflake, this.ysnowflake);
         image(this.snowflake2, this.xsnowflake2, this.ysnowflake2);
 
-        // const snowflakeSpeed = 4; (defined in main.js)
+        // var snowflakeSpeed = 4; (defined in main.js)
         this.xsnowflake -= snowflakeSpeed;
         this.ysnowflake -= snowflakeSpeed / 4;
         if (this.xsnowflake + width <= 0) {

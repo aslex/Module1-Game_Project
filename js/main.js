@@ -13,6 +13,7 @@ function preload() {
 
 function setup() {
     createCanvas(width, height);
+    // Canvas.center();
     game.setup();
 
 }

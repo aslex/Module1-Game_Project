@@ -30,7 +30,9 @@ class Game {
         // }, 3000);
 
         if (gameStart === true) {
-            if (frameCount > 200 && frameCount % 200 === 0) {
+            if (keyIsDown(RIGHT_ARROW) && frameCount % 140 === 0) {
+                this.obstacleArr.push(new Obstacle());
+            } else if (frameCount % 200 === 0) {
                 this.obstacleArr.push(new Obstacle());
             }
 
