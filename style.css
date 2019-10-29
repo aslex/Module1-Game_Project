@@ -1,0 +1,6 @@
+.instructions.visible{
+visibility: visible;
+}
+.instructions{
+    visibility: hidden;
+}

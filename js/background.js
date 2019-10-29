@@ -46,10 +46,11 @@ class Background {
         clear();
         background("lightblue");
         image(this.mountain, this.xmountain, 60, width, 600);
+        push();
         stroke('white');
-        line(30, 450, width, height + 200);
         strokeWeight(500);
-
+        line(30, 450, width, height + 200);
+        pop();
 
         image(this.snowflake, this.xsnowflake, this.ysnowflake);
         image(this.snowflake2, this.xsnowflake2, this.ysnowflake2);

@@ -33,5 +33,10 @@ function keyPressed() {
         game.player.jump();
     }
 
+    function anyKeyToBegin() {
+        if (keyIsPressed === true) {
+
+        }
+    }
 
 }
