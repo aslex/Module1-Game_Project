@@ -16,7 +16,7 @@ class Player {
     }
 
     draw() {
-
+        // rect(this.x, this.y, this.width, this.height)
         image(this.ski, this.x, this.y, this.width, this.height)
 
         if (frameCount > 250 && frameCount < 390) {

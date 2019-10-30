@@ -51,7 +51,9 @@ class Game {
                     document.querySelector('.game-over').style.visibility = 'visible';
                 }
             });
-
+            if (keyIsDown(RIGHT_ARROW) && frameCount % 160 === 0) {
+                this.presentArr.push(new Present());
+            }
             if (frameCount % 400 === 0) {
                 this.presentArr.push(new Present());
             }
@@ -75,15 +77,16 @@ class Game {
     }
 
     isCollision(obstacle, player) {
+
         if (
-            player.x + player.width - 20 < obstacle.x + 10 ||
-            obstacle.x - 10 + obstacle.width < player.x + 20
+            player.x + player.width - 10 < obstacle.x + 20 ||
+            obstacle.x + obstacle.width - 20 < player.x
         ) {
             return false;
         }
         if (
-            player.y + 20 > obstacle.y + obstacle.height ||
-            obstacle.y > player.y + player.height - 20
+            player.y > obstacle.y + obstacle.height - 15 ||
+            obstacle.y + 20 > player.y + player.height
         ) {
             return false;
         }
@@ -98,7 +101,7 @@ class Game {
             return false;
         }
         if (
-            player.y > present.y + present.height ||
+            player.y > present.y + present.height - 10 ||
             present.y > player.y + player.height
         ) {
             return false;

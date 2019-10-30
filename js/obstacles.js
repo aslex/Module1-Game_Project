@@ -13,11 +13,9 @@ class Obstacle {
     }
 
     draw() {
-        //clear();
-
+        // rect(this.x, this.y, this.width -25, this.height-15)
         image(this.treeObstacle, this.x, this.y, this.width, this.height);
 
-        // rect(this.x, this.y, this.width, this.height);
         this.x -= 4;
         this.y -= 1.5;
         if (keyIsDown(RIGHT_ARROW)) {
@@ -49,6 +47,7 @@ class Present {
     }
 
     draw() {
+        // rect(this.x, this.y, this.width, this.height)
         image(this.presentImage, this.x, this.y, this.width, this.height);
 
         this.x -= 3;
