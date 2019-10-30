@@ -12,7 +12,7 @@ class Player {
     }
 
     preload() {
-        this.ski = loadImage('/assets/penguin-ski-cutout.png')
+        this.ski = loadImage('./assets/penguin-ski-cutout.png')
     }
 
     draw() {
