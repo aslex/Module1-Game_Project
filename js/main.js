@@ -7,6 +7,7 @@ const height = 700;
 
 const introBox = document.getElementsByTagName('div');
 
+
 function preload() {
     game.preload();
 }
