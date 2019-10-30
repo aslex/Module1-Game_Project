@@ -45,7 +45,7 @@ span.key {
     padding: 0% 15%;
 }
 
-p>a {
+.instructions p>a {
     font-size: .4em;
     text-decoration: none;
     color: white;
@@ -65,4 +65,44 @@ p>a {
 
 .about img {
     max-width: 10%;
+}
+
+.game-over {
+    /* display: none; */
+    /* position: fixed;
+        color: white;
+    width: 50vh;
+    height: 40vh;
+    align-content: center; */
+    visibility: hidden;
+    font-family: Verdana, sans-serif, Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    position: fixed;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+
+    width: 20%;
+    height: 20%;
+    padding: 3%;
+
+    border-radius: 1.8em;
+    background-color: rgba(139, 172, 181, .7);
+}
+
+.game-over a {
+    text-decoration: none;
+    color: white;
+}
+
+.game-over a:visited {
+    color: white;
+}
+
+.game-over>p {
+    font-weight: bold;
+    margin-top: -1em;
 }

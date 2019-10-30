@@ -3,6 +3,7 @@ class Game {
         this.background = new Background();
         this.player = new Player();
         this.obstacleArr = [];
+        this.presentArr = [];
         //this.randomInterval = Math.random()*150 + 120;
     }
 
@@ -22,6 +23,7 @@ class Game {
         console.log('game.draw');
         this.background.draw();
         this.player.draw();
+
 
 
         // random interval function
@@ -45,9 +47,31 @@ class Game {
                 if (this.isCollision(obs, this.player)) {
                     console.log('game over');
                     noLoop();
+                    document.querySelector('.game-over>p').innerText = 'Score: ' + this.player.totalPoints;
+                    document.querySelector('.game-over').style.visibility = 'visible';
                 }
             });
+
+            if (frameCount % 400 === 0) {
+                this.presentArr.push(new Present());
+            }
+
+            this.presentArr.forEach((gift, index, arr) => {
+                gift.draw();
+
+                if (this.catchPresent(gift, this.player)) {
+                    console.log('more points!');
+                    arr.splice(index, 1);
+                } else if (gift.x < -gift.width) {
+                    arr.splice(index, 1);
+                }
+
+            });
         }
+
+
+
+
     }
 
     isCollision(obstacle, player) {
@@ -66,6 +90,26 @@ class Game {
         return true;
     }
 
+    catchPresent(present, player) {
+        if (
+            player.x + player.width < present.x ||
+            present.x + present.width < player.x
+        ) {
+            return false;
+        }
+        if (
+            player.y > present.y + present.height ||
+            present.y > player.y + player.height
+        ) {
+            return false;
+        }
+        if (keyIsDown(RIGHT_ARROW)) {
+            player.totalPoints += 5;
+            return true;
+        }
+        player.totalPoints += 2;
+        return true;
+    }
 
 
 }

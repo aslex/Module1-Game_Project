@@ -7,6 +7,7 @@ class Player {
         this.width = 70;
         this.height = 60;
         this.jumpCount = 0;
+        this.totalPoints = 0;
 
     }
 
