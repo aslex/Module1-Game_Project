@@ -5,7 +5,7 @@ let gameStart = false
 const width = 1200;
 const height = 700;
 
-const introBox = document.getElementsByTagName('div');
+//const introBox = document.getElementsByTagName('div');
 
 
 function preload() {
@@ -29,7 +29,7 @@ function draw() {
     if (keyIsDown(RIGHT_ARROW)) {
         game.player.accelerate();
     }
-    if (keyIsPressed === true && gameStart == false) {
+    if (keyIsPressed === true && gameStart === false) {
         console.log("working")
         anyKeyToBegin();
     }
@@ -49,7 +49,7 @@ function anyKeyToBegin() {
     console.log('keypressed - begin game');
     // document.querySelector('div').remove();
 
-    document.querySelector('div').style.visibility = "hidden";
+    document.querySelector('div.instructions').style.visibility = "hidden";
     //document.querySelector('div').style.visibility = "visbile";
 
     // introBox.classList.add('invisible');

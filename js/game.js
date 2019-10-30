@@ -64,6 +64,7 @@ class Game {
                 if (this.catchPresent(gift, this.player)) {
                     console.log('more points!');
                     arr.splice(index, 1);
+                    document.querySelector('.score-keeper>p>span').innerText = this.player.totalPoints;
                 } else if (gift.x < -gift.width) {
                     arr.splice(index, 1);
                 }
@@ -79,14 +80,14 @@ class Game {
     isCollision(obstacle, player) {
 
         if (
-            player.x + player.width - 10 < obstacle.x + 20 ||
+            player.x + player.width - 15 < obstacle.x + 20 ||
             obstacle.x + obstacle.width - 20 < player.x
         ) {
             return false;
         }
         if (
             player.y > obstacle.y + obstacle.height - 15 ||
-            obstacle.y + 20 > player.y + player.height
+            obstacle.y + 25 > player.y + player.height - 10
         ) {
             return false;
         }
@@ -113,6 +114,5 @@ class Game {
         player.totalPoints += 2;
         return true;
     }
-
 
 }

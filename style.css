@@ -4,20 +4,23 @@ body {
 }
 
 body {
-    margin: 0;
+
+
+    /* margin: 0; */
     display: flex;
     /* This centers our sketch horizontally. */
     justify-content: center;
     /* This centers our sketch vertically. */
     align-items: center;
+    font-family: Verdana, sans-serif, Georgia, 'Times New Roman', Times, serif;
+    */
 }
 
 .instructions {
     visibility: visible;
-    font-family: Verdana, sans-serif, Georgia, 'Times New Roman', Times, serif;
     color: white;
     position: fixed;
-    /* margin-top: 12%; */
+    /* font-family: Verdana, sans-serif, Georgia, 'Times New Roman', Times, serif; */
 
     display: flex;
     flex-direction: column;
@@ -105,4 +108,16 @@ span.key {
 .game-over>p {
     font-weight: bold;
     margin-top: -1em;
+}
+
+.score-keeper {
+    visibility: visible;
+    position: fixed;
+
+    background-color: rgba(139, 172, 181, .7);
+    color: white;
+    margin-top: -18%;
+    margin-left: 31%;
+    padding: .1em 1.6em;
+    border-radius: 1.2em;
 }
