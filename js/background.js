@@ -27,11 +27,11 @@ class Background {
 
     }
     preload() {
-        this.mountain = loadImage("./assets/mountain.png");
-        this.snowflake = loadImage('./assets/Ironhack-project1-snowflakes.png');
-        this.trees = loadImage('./assets/trees.png');
-        this.treesReversed = loadImage('./assets/trees2.png');
-        this.snowflake2 = loadImage('./assets/Ironhack-project1-snowflakes copy.png')
+        this.mountain = loadImage("assets/mountain.png");
+        this.snowflake = loadImage('assets/Ironhack-project1-snowflakes.png');
+        this.trees = loadImage('assets/trees.png');
+        this.treesReversed = loadImage('assets/trees2.png');
+        this.snowflake2 = loadImage('assets/Ironhack-project1-snowflakes copy.png')
         // this.clouds = loadImage('/assets/clouds.jpg');
     }
 
