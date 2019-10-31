@@ -4,6 +4,8 @@ let obstacleSpeed = 1;
 let gameStart = false
 const width = 1200;
 const height = 700;
+const scoreBox = document.querySelector('.score-keeper');
+const scoreBoxCount = document.querySelector('.score-keeper>p>span');
 
 //const introBox = document.getElementsByTagName('div');
 
@@ -47,11 +49,7 @@ function keyPressed() {
 function anyKeyToBegin() {
     gameStart = true;
     console.log('keypressed - begin game');
-    // document.querySelector('div').remove();
-
     document.querySelector('div.instructions').style.visibility = "hidden";
-    //document.querySelector('div').style.visibility = "visbile";
+    scoreBox.style.visibility = 'visible';
 
-    // introBox.classList.add('invisible');
-    //introBox.classList.remove('instructions');
 }

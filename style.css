@@ -12,8 +12,9 @@ body {
     justify-content: center;
     /* This centers our sketch vertically. */
     align-items: center;
-    font-family: Verdana, sans-serif, Georgia, 'Times New Roman', Times, serif;
-
+    font-family: benton-sans, sans-serif, Verdana, Georgia, 'Times New Roman', Times, serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .instructions {
@@ -105,7 +106,7 @@ span.key {
 }
 
 .score-keeper {
-    visibility: visible;
+    visibility: hidden;
     position: fixed;
 
     background-color: rgba(139, 172, 181, .7);

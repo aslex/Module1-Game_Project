@@ -26,10 +26,7 @@ class Obstacle {
 
 
     }
-    // accelerate(){
-    //     console.log('obstacle accelerate')
-    //     obstacleSpeed = 2;
-    // }
+
 
 }
 

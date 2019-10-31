@@ -4,7 +4,7 @@ class Game {
         this.player = new Player();
         this.obstacleArr = [];
         this.presentArr = [];
-        //this.randomInterval = Math.random()*150 + 120;
+
     }
 
     preload() {
@@ -26,10 +26,6 @@ class Game {
 
 
 
-        // random interval function
-        // let randomInterval = setInterval(function () {
-        //     return Math.random() * 170 + 130;
-        // }, 3000);
 
         if (gameStart === true) {
             if (keyIsDown(RIGHT_ARROW) && frameCount % 140 === 0) {
@@ -64,7 +60,7 @@ class Game {
                 if (this.catchPresent(gift, this.player)) {
                     console.log('more points!');
                     arr.splice(index, 1);
-                    document.querySelector('.score-keeper>p>span').innerText = this.player.totalPoints;
+                    scoreBoxCount.innerText = this.player.totalPoints;
                 } else if (gift.x < -gift.width) {
                     arr.splice(index, 1);
                 }
@@ -78,6 +74,7 @@ class Game {
     }
 
     isCollision(obstacle, player) {
+
 
         if (
             player.x + player.width - 15 < obstacle.x + 20 ||
